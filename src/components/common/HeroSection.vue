@@ -1,6 +1,6 @@
-<!-- filepath: /Users/benjaminappiah-poku/TekLumen/-webApps/projects/naachiaa-website-v1/src/components/common/HeroSection.vue -->
+
 <template>
-  <!-- ===== NAACHIAA ESTATES HERO SECTION START ===== -->
+  <!-- ===== ESTATES HERO SECTION START ===== -->
   <!-- 
     Simplified hero section - mobile-first design for Ghana's market
     Follows TekLumen guidelines: 48px touch targets, WhatsApp integration, offline-aware
