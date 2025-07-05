@@ -253,40 +253,13 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT CTA SECTION ===== -->
-  <section id="contact" class="bg-black py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-          Let's bring your idea to life.
-        </h2>
-        <p class="text-gray-300 text-lg mb-8">
-          Ready to launch your professional website? We're here to help make it happen quickly and beautifully.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
-            class="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors font-medium min-h-[48px] flex items-center justify-center">
-            📱 WhatsApp Us Now
-          </a>
-          <a href="mailto:hello@teklumen.com"
-            class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium min-h-[48px] flex items-center justify-center">
-            ✉️ hello@teklumen.com
-          </a>
-        </div>
-
-        <div class="mt-8 text-gray-400">
-          <p>Based in Accra & Kumasi (Remote-first)</p>
-          <p class="mt-2">Average response time: Under 2 hours</p>
-        </div>
-      </div>
-    </div>
-  </section>
+ <ContactSection />
 
 
 </template>
 
 <script setup lang="ts">
+import ContactSection from '@/components/common/ContactSection.vue'
 import ToolsSection from '@/components/common/ToolsSection.vue'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
@@ -337,9 +310,9 @@ interface Value {
 const isOnline = ref(navigator.onLine)
 
 // ===== Business Configuration =====
-const businessPhone = '+233123456789'
+const businessPhone = '+233594093926'
 const whatsappLink = computed(() => 
-  `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumen's web design services. Can we discuss my project?`
+  `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumin's web design services. Can we discuss my project?`
 )
 
 // ===== Data =====
@@ -446,7 +419,6 @@ const pricingPlans = ref<PricingPlan[]>([
       'Mobile optimization',
       'Domain setup support',
       'Advanced SEO setup',
-      'Contact form integration',
       'Social media integration'
     ]
   },
@@ -462,7 +434,6 @@ const pricingPlans = ref<PricingPlan[]>([
       'Mobile optimization',
       'Domain setup support',
       'Advanced SEO setup',
-      'Contact form integration',
       'Social media integration',
       'Custom functionality',
       'Content management system'

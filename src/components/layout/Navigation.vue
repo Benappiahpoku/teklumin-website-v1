@@ -13,10 +13,14 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center gap-3">
-          <TekLumenLogo class="w-8 h-8" />
+          <a href="/">
+            <TekLumenLogo class="w-8 h-8" />
+          </a>
           <div>
-            <h1 class="text-xl font-bold text-gray-900">TekLumin</h1>
-            <p class="text-xs text-gray-600">Helping You Grow with Tech</p>
+            <a href="/">
+              <h1 class="text-xl font-bold text-gray-900">TekLumin</h1>
+              <p class="text-xs text-gray-600">Helping You Grow with Tech</p>
+            </a>
           </div>
         </div>
 
@@ -33,10 +37,12 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="#projects" class="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
-          <a href="#about" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
-          <a href="#pricing" class="text-gray-700 hover:text-gray-900 transition-colors">Pricing</a>
-          <a href="#contact" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+          <a href="/" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+          <a href="projects" class="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
+          <a href="pricing" class="text-gray-700 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="about" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+
+          <a href="contact" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
           <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
             class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
             📱 WhatsApp
@@ -47,16 +53,20 @@
       <!-- Mobile Menu -->
       <div v-if="showMobileMenu" class="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
         <div class="flex flex-col gap-4">
-          <a href="#projects" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
+          <a href="/" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
+            Home
+          </a>
+          <a href="/projects" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
             Projects
           </a>
-          <a href="#about" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            About
-          </a>
-          <a href="#pricing" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
+          <a href="/pricing" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
             Pricing
           </a>
-          <a href="#contact" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
+          <a href="/about" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
+            About
+          </a>
+
+          <a href="/contact" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
             Contact
           </a>
           <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
@@ -78,7 +88,7 @@ import TekLumenLogo from '../base/TekLumenLogo.vue'
 const showMobileMenu = ref(false)
 
 // ===== Business Configuration =====
-const businessPhone = '+233123456789'
+const businessPhone = '+233594093926'
 const whatsappLink = computed(() =>
   `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumen's web design services. Can we discuss my project?`
 )
