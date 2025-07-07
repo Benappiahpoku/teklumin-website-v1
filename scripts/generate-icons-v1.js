@@ -9,7 +9,7 @@ async function generateIcons() {
   // Base SVG content for the app icon
   const baseIconSvg = `
     <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-      <rect width="512" height="512" fill="#1F3A8A"/>
+      <rect width="512" height="512" fill="#2D7765"/>
       <text x="256" y="256" font-family="Arial" font-size="200" fill="white" text-anchor="middle" dominant-baseline="central">
         S
       </text>
@@ -17,14 +17,14 @@ async function generateIcons() {
   `
 
   // Create the public/icons directory if it doesn't exist
-  await fs.mkdir('public/icons', { recursive: true })
+  await fs.mkdir('public/icons-v1', { recursive: true })
 
   // Generate main app icons
   for (const size of sizes) {
     await sharp(Buffer.from(baseIconSvg))
       .resize(size, size)
       .png()
-      .toFile(`public/icons/icon-${size}x${size}.png`)
+      .toFile(`public/icons-v1/icon-${size}x${size}.png`)
     console.log(`Generated icon-${size}x${size}.png`)
   }
 
@@ -32,7 +32,7 @@ async function generateIcons() {
   for (const { name, size } of iconSizes) {
     const iconSvg = `
       <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-        <rect width="96" height="96" fill="#1F3A8A"/>
+        <rect width="96" height="96" fill="#2D7765"/>
         <text x="48" y="48" font-family="Arial" font-size="40" fill="white" text-anchor="middle" dominant-baseline="central">
           ${name[0].toUpperCase()}
         </text>
@@ -42,7 +42,7 @@ async function generateIcons() {
     await sharp(Buffer.from(iconSvg))
       .resize(size, size)
       .png()
-      .toFile(`public/icons/${name}-${size}x${size}.png`)
+      .toFile(`public/icons-v1/${name}-${size}x${size}.png`)
     console.log(`Generated ${name}-${size}x${size}.png`)
   }
 
@@ -50,23 +50,24 @@ async function generateIcons() {
   const screenshotSvg = `
     <svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
       <rect width="1080" height="1920" fill="#FFFFFF"/>
-      <rect y="0" width="1080" height="80" fill="#1F3A8A"/>
+      <rect y="0" width="1080" height="80" fill="#2D7765"/>
       <text x="540" y="45" font-family="Arial" font-size="24" fill="white" text-anchor="middle" dominant-baseline="central">
-        TekLumen App
+        TekLumin App
       </text>
-      <text x="540" y="960" font-family="Arial" font-size="40" fill="#1F3A8A" text-anchor="middle" dominant-baseline="central">
+      <text x="540" y="960" font-family="Arial" font-size="40" fill="#2D7765" text-anchor="middle" dominant-baseline="central">
         Sample Screenshot
       </text>
     </svg>
   `
 
-  await fs.mkdir('public/screenshots', { recursive: true })
+  await fs.mkdir('public/screenshots-v1', { recursive: true })
   await sharp(Buffer.from(screenshotSvg))
     .jpeg({ quality: 90 })
-    .toFile('public/screenshots/mobile-home.jpg')
+    .toFile('public/screenshots-v1/mobile-home.jpg')
   console.log('Generated mobile-home.jpg screenshot')
 }
 
 generateIcons().catch(console.error)
 
-// Type node scripts/generate-icons.js
+
+// Type node scripts/generate-icons-v1.js to run the code

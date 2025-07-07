@@ -7,6 +7,7 @@
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
           Let's bring your idea to life.
         </h2>
+        
         <p class="text-gray-300 text-lg mb-8">
           Ready to launch your professional website? We're here to help make it happen quickly and beautifully.
         </p>
@@ -16,9 +17,9 @@
             class="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors font-medium min-h-[48px] flex items-center justify-center">
             📱 WhatsApp Us Now
           </a>
-          <a href="mailto:hello@teklumen.com"
+          <a href="mailto:bappiahpoku@gmail.com"
             class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-medium min-h-[48px] flex items-center justify-center">
-            ✉️ hello@teklumen.com
+            ✉️ bappiahpoku@gmail.com
           </a>
         </div>
 

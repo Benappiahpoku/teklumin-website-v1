@@ -96,131 +96,12 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS PREVIEW SECTION ===== -->
-  <section id="projects" class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Some Things We've Built
-        </h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
-          See real examples of sites we've delivered — clean, simple, and effective.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <div v-for="project in projects" :key="project.id"
-          class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="aspect-video bg-gray-100 flex items-center justify-center">
-            <div class="text-4xl">{{ project.icon }}</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ project.name }}</h3>
-            <p class="text-gray-600 mb-4">{{ project.description }}</p>
-            <button class="text-black hover:text-gray-700 transition-colors font-medium">
-              → View Project
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <button
-          class="border-2 border-black text-black px-8 py-3 rounded-lg hover:bg-black hover:text-white transition-colors font-medium">
-          → View All Projects
-        </button>
-      </div>
-    </div>
-  </section>
+  <FeaturedProjectsSection />
 
   <ToolsSection />
 
-  <!-- ===== TESTIMONIALS SECTION ===== -->
-  <section class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          What People Say
-        </h2>
-        <p class="text-gray-600 text-lg">
-          Real feedback from real clients who trusted us with their online presence.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div v-for="testimonial in testimonials" :key="testimonial.id" class="bg-gray-50 p-6 rounded-lg">
-          <div class="flex text-yellow-400 mb-4">
-            <span v-for="star in 5" :key="star">⭐</span>
-          </div>
-          <blockquote class="text-gray-700 text-lg mb-4 italic">
-            "{{ testimonial.quote }}"
-          </blockquote>
-          <div class="flex items-center">
-            <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center mr-3">
-              <span class="text-sm font-semibold">{{ testimonial.name.charAt(0) }}</span>
-            </div>
-            <div>
-              <p class="font-semibold text-gray-900">{{ testimonial.name }}</p>
-              <p class="text-sm text-gray-600">{{ testimonial.location }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRICING SECTION ===== -->
-  <section id="pricing" class="bg-gray-50 py-12 md:py-16">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Simple, Transparent Pricing
-        </h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-          All plans come with free lifetime hosting. Domains are not included — we help you register yours in 5 minutes.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div v-for="(plan, index) in pricingPlans" :key="plan.id"
-          class="bg-white p-8 rounded-lg shadow-sm border-2 hover:shadow-lg transition-shadow"
-          :class="{ 'border-black': index === 1, 'border-gray-200': index !== 1 }">
-          <div class="text-center mb-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ plan.name }}</h3>
-            <div class="text-3xl font-bold text-gray-900 mb-2">
-              {{ formatCurrency(plan.price) }}
-            </div>
-            <p class="text-gray-600">{{ plan.description }}</p>
-          </div>
-
-          <ul class="space-y-3 mb-8">
-            <li v-for="feature in plan.features" :key="feature" class="flex items-center text-gray-700">
-              <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
-              </svg>
-              {{ feature }}
-            </li>
-          </ul>
-
-          <button class="w-full py-3 px-4 rounded-lg font-medium transition-colors min-h-[48px]" :class="index === 1 
-              ? 'bg-black text-white hover:bg-gray-800' 
-              : 'border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50'">
-            Get Started
-          </button>
-        </div>
-      </div>
-
-      <div class="text-center mt-8">
-        <p class="text-gray-600 mb-4">Need something custom?</p>
-        <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
-          class="text-black hover:text-gray-700 transition-colors font-medium">
-          → Contact us for a tailored quote
-        </a>
-      </div>
-    </div>
-  </section>
+  <TestimonialsSection />
+<PricingSection />
 
   <!-- ===== ABOUT SECTION ===== -->
   <section id="about" class="bg-white py-12 md:py-16">
@@ -259,9 +140,13 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import ContactSection from '@/components/common/ContactSection.vue'
 import ToolsSection from '@/components/common/ToolsSection.vue'
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import PricingSection from '@/components/common/PricingSection.vue'
+import FeaturedProjectsSection from '@/components/common/FeaturedProjectsSection.vue'
+import TestimonialsSection from '@/components/common/TestimonialsSection.vue'
+
 
 
 function handleVideoError(): void {
@@ -276,28 +161,6 @@ interface Feature {
   description: string
 }
 
-interface Project {
-  id: string
-  name: string
-  description: string
-  icon: string
-}
-
-
-interface Testimonial {
-  id: string
-  name: string
-  location: string
-  quote: string
-}
-
-interface PricingPlan {
-  id: string
-  name: string
-  price: number
-  description: string
-  features: string[]
-}
 
 interface Value {
   id: string
@@ -355,91 +218,12 @@ const features = ref<Feature[]>([
   }
 ])
 
-const projects = ref<Project[]>([
-  {
-    id: '1',
-    name: 'Mayra SkinCare',
-    description: 'A clean e-commerce one-pager built for mobile users.',
-    icon: '🧴'
-  },
-  {
-    id: '2',
-    name: 'Kojo\'s Bakery',
-    description: 'Portfolio site for a local bakery — clean design, custom illustrations.',
-    icon: '🥖'
-  },
-  {
-    id: '3',
-    name: 'Naachiaa Estates',
-    description: 'Real estate site built for trust, simplicity, and clarity.',
-    icon: '🏘️'
-  }
-])
 
 
-const testimonials = ref<Testimonial[]>([
-  {
-    id: '1',
-    name: 'Kwame',
-    location: 'Accra, Ghana',
-    quote: 'They delivered my site in four days — super helpful team.'
-  },
-  {
-    id: '2',
-    name: 'Ama',
-    location: 'Kumasi, Ghana',
-    quote: 'I love the simplicity. My site works on every phone.'
-  }
-])
 
-const pricingPlans = ref<PricingPlan[]>([
-  {
-    id: '1',
-    name: 'Business Starter',
-    price: 4000,
-    description: 'Perfect for getting started online',
-    features: [
-      'One-page website',
-      'Clean, responsive design',
-      'Free lifetime hosting',
-      'Mobile optimization',
-      'Domain setup support',
-      'Basic SEO setup'
-    ]
-  },
-  {
-    id: '2',
-    name: 'Standard',
-    price: 8000,
-    description: 'Most popular choice',
-    features: [
-      '5-page website',
-      'Clean, responsive design',
-      'Free lifetime hosting',
-      'Mobile optimization',
-      'Domain setup support',
-      'Advanced SEO setup',
-      'Social media integration'
-    ]
-  },
-  {
-    id: '3',
-    name: 'Enterprise',
-    price: 13000,
-    description: 'For growing businesses',
-    features: [
-      '5-page website + blog or custom app',
-      'Clean, responsive design',
-      'Free lifetime hosting',
-      'Mobile optimization',
-      'Domain setup support',
-      'Advanced SEO setup',
-      'Social media integration',
-      'Custom functionality',
-      'Content management system'
-    ]
-  }
-])
+
+
+
 
 const values = ref<Value[]>([
   {
@@ -468,13 +252,6 @@ const values = ref<Value[]>([
   }
 ])
 
-// ===== Helper Functions =====
-function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-GH', {
-    style: 'currency',
-    currency: 'GHS'
-  }).format(amount)
-}
 
 // function scrollToSection(sectionId: string): void {
 //   const element = document.getElementById(sectionId)

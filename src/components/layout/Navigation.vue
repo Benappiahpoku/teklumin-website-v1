@@ -38,11 +38,11 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8">
           <a href="/" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
-          <a href="projects" class="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
-          <a href="pricing" class="text-gray-700 hover:text-gray-900 transition-colors">Pricing</a>
-          <a href="about" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+          <a href="/projects" class="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
+          <a href="/pricing" class="text-gray-700 hover:text-gray-900 transition-colors">Pricing</a>
+          <a href="/about" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
 
-          <a href="contact" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+          <a href="/contact" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
           <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
             class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
             📱 WhatsApp
@@ -90,7 +90,7 @@ const showMobileMenu = ref(false)
 // ===== Business Configuration =====
 const businessPhone = '+233594093926'
 const whatsappLink = computed(() =>
-  `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumen's web design services. Can we discuss my project?`
+  `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumin's web design services. Can we discuss my project?`
 )
 
 

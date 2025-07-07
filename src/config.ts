@@ -3,7 +3,7 @@ interface Config {
 }
 
 const config: Config = {
-  projectName: 'teklumen-frontend-starter-v1'
+  projectName: 'teklumin'
 };
 
 export default config;
