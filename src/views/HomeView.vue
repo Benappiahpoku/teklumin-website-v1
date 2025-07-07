@@ -143,7 +143,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import ContactSection from '@/components/common/ContactSection.vue'
 import ToolsSection from '@/components/common/ToolsSection.vue'
-import PricingSection from '@/components/common/PricingSection.vue'
+import PricingSection from '@/components/common/PricingSectionArea.vue'
 import FeaturedProjectsSection from '@/components/common/FeaturedProjectsSection.vue'
 import TestimonialsSection from '@/components/common/TestimonialsSection.vue'
 

@@ -152,7 +152,7 @@
 
 <script setup lang="ts">
 import ContactSection from '@/components/common/ContactSection.vue'
-import PricingSection from '@/components/common/PricingSection.vue'
+import PricingSection from '@/components/common/PricingSectionArea.vue'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // ===== Types & Interfaces =====
