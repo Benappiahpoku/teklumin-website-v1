@@ -48,7 +48,7 @@
           <div class="order-2 lg:order-1">
             <div class="flex justify-center lg:justify-start">
               <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg">
-                <img v-if="!imageError" src="/src/assets/images/benjaminprofilepicOriginal.jpg" 
+                <img v-if="!imageError" src="/benjaminprofilepic.webp" 
                   alt="Benjamin Appiah-Poku - Creative Director, TekLumen"
                   class="w-full h-full object-cover" loading="lazy" @error="imageError = true" />
                 <!-- Fallback when image fails to load -->

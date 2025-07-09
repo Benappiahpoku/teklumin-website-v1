@@ -60,28 +60,28 @@ const tools = ref<Tool[]>([
     id: '2',
     name: 'Invoice Maker',
     description: 'Create professional invoices instantly. Perfect for Ghana businesses with mobile money integration.',
-    image: '/invoiceteklumin.png',
+    image: '/invoiceteklumin.webp',
     link: 'https://invoicemaker-eosin.vercel.app/'
   },
   {
     id: '2',
     name: 'Receipt Maker',
     description: 'Generate clean, professional receipts for your customers. Mobile-optimized and printer-friendly.',
-    image: '/receiptteklumin.png',
+    image: '/receiptteklumin.webp',
     link: 'https://receiptmaker-ten.vercel.app/'
   },
    {
     id: '3',
     name: 'Sales Tracker',
     description: 'Simple sales tracking tool to monitor your business performance and growth over time.',
-    image: '/salestrackerteklumin.png',
+    image: '/salestrackerteklumin.webp',
     link: 'https://salestracker-gamma.vercel.app/'
   },
   {
     id: '4',
     name: 'Income Tracker - Coming Soon',
     description: 'Track your money, even without internet. Record, review, and share your income anytime, anywhere in Ghana.',
-    image: '/incometrackerteklumin.png',
+    image: '/incometrackerteklumin.webp',
     link: '#' // Add the correct link if available
   }
 ])

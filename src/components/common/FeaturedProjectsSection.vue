@@ -73,7 +73,7 @@ const featuredProjects = ref<Project[]>([
         id: '1',
         name: 'Naachiaa Estates',
         description: 'Real estate website built for trust, simplicity, and clarity. Clean property listings with detailed information and easy contact options.',
-        image: '/naachiaaproject.png',
+        image: '/naachiaaproject.webp',
         category: 'Real Estate',
         deliveryTime: '3 days',
         features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Free Lifetime hosting']
@@ -82,21 +82,21 @@ const featuredProjects = ref<Project[]>([
         id: '2',
         name: 'Jerry Donkor & Associates ',
         description: 'A clean business 5-pager built for mobile users. Features project showcase, client testimonials, and seamless mobile first design experience.',
-        image: '/jdaproject.png',
+        image: '/jdaproject.webp',
         category: 'Project Services',
         deliveryTime: '5 days',
         features: ['Mobile-first design', 'Project catalog', 'CLient testimonials', ]
     },
     {
         id: '3',
-        name: 'TekLumin',
-        description: 'Portfolio site for my Web design Agency - clean design, custom illustrations.',
+        name: 'Stratonea',
+        description: 'A clean, mobile-first business website designed to position Stratonea as a trusted consultancy. This one pager features a modern layout, showcasing the SME Tools for African Businesses —crafted for clarity, speed, and professionalism.',
        
-        image: '/tekluminproject.png',
+        image: '/stratoneaproject.webp',
         category: 'Portfolio',
         deliveryTime: '2 days',
         location: 'Accra, Ghana',
-        features: ['Mobile - first design', 'Services catalog', 'WhatsApp integration',]
+        features: ['Mobile - first design', 'Apps catalog', 'WhatsApp integration',]
     },
 ])
 

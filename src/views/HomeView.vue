@@ -52,9 +52,9 @@
           <div class="relative">
             <video class="w-full h-auto rounded-lg shadow-lg" autoplay muted loop playsinline preload="metadata"
               @error="handleVideoError">
-              <source src="/teklumenvid2.mp4" type="video/mp4">
+              <source src="/tekluminvid.mp4" type="video/mp4">
               <!-- Fallback image for browsers that don't support video -->
-              <img src="/heropicteklumen.webp" alt="TekLumen web design showcase"
+              <img src="/heropicteklumin.webp" alt="TekLumen web design showcase"
                 class="w-full h-auto rounded-lg shadow-lg" loading="eager" />
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-lg pointer-events-none">

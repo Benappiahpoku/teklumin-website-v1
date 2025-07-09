@@ -76,8 +76,8 @@
             For detailed project discussions or formal inquiries. We'll get back to you within 24 hours.
           </p>
           <div class="space-y-4">
-            <p class="text-gray-700 font-medium">hello@teklumen.com</p>
-            <a href="mailto:hello@teklumen.com"
+            <p class="text-gray-700 font-medium">bappiahpoku@gmail.com</p>
+            <a href="mailto:bappiahpoku@gmail.com"
               class="w-full border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium min-h-[48px] flex items-center justify-center">
               📧 Send Email
             </a>

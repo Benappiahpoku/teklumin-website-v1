@@ -8,12 +8,10 @@ const iconSizes = ['home', 'contact'].map(name => ({ name, size: 96 }))
 async function generateIcons() {
   // Base SVG content for the app icon
   const baseIconSvg = `
-    <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-      <rect width="512" height="512" fill="#1F3A8A"/>
-      <text x="256" y="256" font-family="Arial" font-size="200" fill="white" text-anchor="middle" dominant-baseline="central">
-        S
-      </text>
-    </svg>
+   <svg width="86" height="82" viewBox="0 0 86 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="43" cy="41" r="40" fill="white" stroke="#222C37" stroke-width="6"/>
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="40" fill="#222C37">T</text>
+</svg>
   `
 
   // Create the public/icons directory if it doesn't exist
@@ -32,8 +30,8 @@ async function generateIcons() {
   for (const { name, size } of iconSizes) {
     const iconSvg = `
       <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
-        <rect width="96" height="96" fill="#1F3A8A"/>
-        <text x="48" y="48" font-family="Arial" font-size="40" fill="white" text-anchor="middle" dominant-baseline="central">
+        <rect width="96" height="96" fill="white" />
+        <text x="48" y="48" font-family="Arial" font-size="40" fill="black" text-anchor="middle" dominant-baseline="central">
           ${name[0].toUpperCase()}
         </text>
       </svg>
