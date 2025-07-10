@@ -134,7 +134,7 @@
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
-              class="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors font-medium min-h-[48px] flex items-center justify-center">
+              class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium min-h-[48px] flex items-center justify-center">
               📱 Discuss Custom Project
             </a>
             <a href="mailto:hello@teklumen.com"
@@ -283,14 +283,14 @@ const customExamples = ref<CustomExample[]>([
   {
     id: '1',
     icon: '🛒',
-    title: 'E-commerce Store',
-    description: 'Online shop with payment integration and inventory management'
+    title: 'Sales Tracker ',
+    description: 'An business dashboard to track your sales activities'
   },
   {
     id: '2',
-    icon: '📚',
-    title: 'Learning Platform',
-    description: 'Course website with video lessons and student progress tracking'
+    icon: '🧾',
+    title: 'Invoice Maker',
+    description: 'An invoice Maker to run your business with'
   },
   {
     id: '3',
