@@ -38,10 +38,12 @@
                                 class="bg-black text-white px-6 md:px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium">
                                 → Build Similar
                             </button>
-                            <button
-                                class="border-2 border-gray-300 text-gray-700 px-2 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
+                           
+                            <a :href="project.detailsUrl || '#' " target="_blank" rel="noopener noreferrer"
+                                class="border-2 border-gray-300 text-gray-700 px-2 py-3 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium flex items-center justify-center">
                                 → View Details
-                            </button>
+                            </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -65,6 +67,7 @@ interface Project {
     deliveryTime: string
     location?: string
     features?: string[]
+    detailsUrl?: string
 }
 
 // ===== Featured Projects Data =====
@@ -76,7 +79,8 @@ const featuredProjects = ref<Project[]>([
         image: '/naachiaaproject.webp',
         category: 'Real Estate',
         deliveryTime: '3 days',
-        features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Free Lifetime hosting']
+        features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Free Lifetime hosting'],
+        detailsUrl: 'https://naachiaa.vercel.app/'
     },
     {
         id: '2',
@@ -85,18 +89,19 @@ const featuredProjects = ref<Project[]>([
         image: '/jdaproject.webp',
         category: 'Project Services',
         deliveryTime: '5 days',
-        features: ['Mobile-first design', 'Project catalog', 'CLient testimonials', ]
+        features: ['Mobile-first design', 'Project catalog', 'CLient testimonials'],
+        detailsUrl: 'https://www.jdapm.com'
     },
     {
         id: '3',
         name: 'Stratonea',
         description: 'A clean, mobile-first business website designed to position Stratonea as a trusted consultancy. This one pager features a modern layout, showcasing the SME Tools for African Businesses —crafted for clarity, speed, and professionalism.',
-       
         image: '/stratoneaproject.webp',
         category: 'Portfolio',
         deliveryTime: '2 days',
         location: 'Accra, Ghana',
-        features: ['Mobile - first design', 'Apps catalog', 'WhatsApp integration',]
+        features: ['Mobile - first design', 'Apps catalog', 'WhatsApp integration'],
+        detailsUrl: 'https://www.stratonea.com'
     },
 ])
 
@@ -106,15 +111,3 @@ function contactForProject(project: Project): void {
     window.open(whatsappUrl, '_blank')
 }
 </script>
-
-<!-- 
-
- {
-        id: '1',
-        name: 'Mayra SkinCare',
-        description: 'A clean e-commerce one-pager built for mobile users. Features product showcase, customer testimonials, and seamless mobile checkout experience.',
-        image: '/naachiaaproject.png',
-        category: 'E-commerce',
-        deliveryTime: '3 days',
-        features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Fast checkout']
-    },-->
