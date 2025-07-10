@@ -36,7 +36,8 @@
             <a href="contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
           </nav>
           <div class="text-center md:text-right">
-            <p class="text-sm text-gray-600">© 2025 TekLumin. All rights reserved.</p>
+            <p class="text-sm text-gray-600">© 2025 <a href="https://www.teklumin.com/">TekLumin </a>. All rights
+              reserved.</p>
           </div>
         </div>
       </div>

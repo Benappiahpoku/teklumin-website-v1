@@ -21,7 +21,7 @@
           class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center gap-4 group focus:outline-none focus:ring-2 focus:ring-black"
           style="text-decoration: none;"
         >
-          <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
             <img
               v-if="tool.image"
               :src="tool.image"
