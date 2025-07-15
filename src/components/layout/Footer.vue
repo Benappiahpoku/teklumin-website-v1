@@ -19,7 +19,7 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="flex items-center gap-3 mb-4 md:mb-0">
-          <TekLumenLogo class="w-6 h-6" />
+          <TekLumenLogo class="w-16 h-16" />
           <div>
             <p class="font-semibold text-gray-900">TekLumin</p>
             <p class="text-xs text-gray-600">Helping You Grow with Tech</p>

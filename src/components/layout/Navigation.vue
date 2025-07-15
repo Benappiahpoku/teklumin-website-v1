@@ -14,7 +14,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <a href="/">
-            <TekLumenLogo class="w-8 h-8" />
+            <TekLumenLogo class="w-16 h-16" />
           </a>
           <div>
             <a href="/">
