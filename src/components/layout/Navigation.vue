@@ -13,14 +13,14 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center gap-3">
-          <a href="/">
+          <RouterLink to="/">
             <TekLumenLogo class="w-16 h-16" />
-          </a>
+          </RouterLink>
           <div>
-            <a href="/">
+            <RouterLink to="/">
               <h1 class="text-xl font-bold text-gray-900">TekLumin</h1>
               <p class="text-xs text-gray-600">Helping You Grow with Tech</p>
-            </a>
+            </RouterLink>
           </div>
         </div>
 
@@ -37,12 +37,10 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="/" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
-          <a href="/projects" class="text-gray-700 hover:text-gray-900 transition-colors">Projects</a>
-          <a href="/pricing" class="text-gray-700 hover:text-gray-900 transition-colors">Pricing</a>
-          <a href="/about" class="text-gray-700 hover:text-gray-900 transition-colors">About</a>
-
-          <a href="/contact" class="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+          <RouterLink v-for="item in navItems" :key="item.to" :to="item.to" class="nav-link"
+            :class="{ 'nav-link--active': isActiveRoute(item.to) }" exact>
+            {{ item.label }}
+          </RouterLink>
           <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
             class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
             📱 WhatsApp
@@ -53,22 +51,10 @@
       <!-- Mobile Menu -->
       <div v-if="showMobileMenu" class="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
         <div class="flex flex-col gap-4">
-          <a href="/" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            Home
-          </a>
-          <a href="/projects" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            Projects
-          </a>
-          <a href="/pricing" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            Pricing
-          </a>
-          <a href="/about" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            About
-          </a>
-
-          <a href="/contact" @click="closeMobileMenu" class="text-gray-700 hover:text-gray-900 transition-colors py-2">
-            Contact
-          </a>
+          <RouterLink v-for="item in navItems" :key="item.to" :to="item.to" @click="closeMobileMenu"
+            class="nav-link-mobile" :class="{ 'nav-link--active': isActiveRoute(item.to) }" exact>
+            {{ item.label }}
+          </RouterLink>
           <a :href="whatsappLink" target="_blank" rel="noopener noreferrer"
             class="bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium text-center min-h-[48px] flex items-center justify-center">
             📱 WhatsApp Us
@@ -82,7 +68,17 @@
 <script setup lang="ts">
 // ===== Imports =====
 import { ref, computed } from 'vue'
+import { useRoute, RouterLink } from 'vue-router'
 import TekLumenLogo from '../base/TekLumenLogo.vue'
+
+// ===== Navigation Items =====
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/pricing', label: 'Pricing' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' }
+]
 
 // ===== Reactive State =====
 const showMobileMenu = ref(false)
@@ -93,6 +89,11 @@ const whatsappLink = computed(() =>
   `https://wa.me/${businessPhone.replace(/\D/g, '')}?text=Hello! I'm interested in TekLumin's web design services. Can we discuss my project?`
 )
 
+// ===== Route Detection =====
+const route = useRoute()
+function isActiveRoute(path: string) {
+  return route.path === path
+}
 
 function toggleMobileMenu(): void {
   showMobileMenu.value = !showMobileMenu.value
@@ -101,57 +102,91 @@ function toggleMobileMenu(): void {
 function closeMobileMenu(): void {
   showMobileMenu.value = false
 }
-
-
-
-// ===== Helper Functions =====
-/**
- * Auto-close mobile menu when route changes
- * Improves mobile user experience
- */
-// Note: Mobile menu auto-closes via @click="isMobileMenuOpen = false" on nav links
-
-// ===== Performance & Accessibility Notes =====
-/**
- * Navigation optimizations for Ghana's mobile users:
- * - Touch-optimized button sizes (48px minimum)
- * - Smooth animations with appropriate durations
- * - High contrast colors for outdoor visibility
- * - Simple, clean design for easy navigation
- * - Mobile-first responsive breakpoints
- * 
- * Accessibility features:
- * - Proper ARIA labels and expanded states
- * - Screen reader friendly text
- * - Keyboard navigation support
- * - Clear visual focus indicators
- * - High contrast color ratios
- */
 </script>
 
-<!--
-  ===== DESIGN NOTES =====
-  
-  COLOR SCHEME:
-  - Background: White for clean, professional look
-  - Text: Gray-600 for body text, Gray-800 for brand name
-  - Primary: Uses Tailwind primary colors (customizable via config)
-  - Hover: Light gray backgrounds with primary color text
-  
-  MOBILE OPTIMIZATION:
-  - Touch targets minimum 48px for accessibility
-  - Smooth animations optimized for mobile performance
-  - Single-thumb navigation friendly
-  - Clean, uncluttered mobile menu
-  
-  RESPONSIVE BREAKPOINTS:
-  - Mobile: Full responsive menu (default to md)
-  - Desktop: Horizontal navigation (md and up)
-  - Clean breakpoint at 768px (md)
-  
-  TEKLUMEN BRANDING:
-  - Logo on the left with company name
-  - Clean, modern design
-  - Professional appearance suitable for tech company
-  - Primary color integration throughout navigation states
--->
+<style scoped>
+/* Desktop nav underline effect */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  color: #374151;
+  /* Tailwind gray-700 */
+  transition: color 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #111827;
+  /* Tailwind gray-900 */
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+
+.nav-link--active {
+  color: #111827 !important;
+  /* Tailwind gray-900 */
+}
+
+.nav-link--active::after {
+  width: 100%;
+  background: #000;
+}
+
+/* Mobile nav underline effect */
+.nav-link-mobile {
+  position: relative;
+  padding-bottom: 4px;
+  color: #374151;
+  transition: color 0.2s;
+  font-weight: 500;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-link-mobile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-mobile:hover,
+.nav-link-mobile:focus {
+  color: #111827;
+}
+
+.nav-link-mobile:hover::after,
+.nav-link-mobile:focus::after {
+  width: 100%;
+}
+
+.nav-link-mobile.nav-link--active {
+  color: #111827 !important;
+}
+
+.nav-link-mobile.nav-link--active::after {
+  width: 100%;
+  background: #000;
+}
+</style>

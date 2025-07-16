@@ -28,12 +28,11 @@
 
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <nav class="flex gap-6">
-            <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
-            <a href="projects" class="text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
-            <a href="pricing" class="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
-            <a href="about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
-
-            <a href="contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+            <router-link to="/" class="text-gray-600 hover:text-gray-900 transition-colors">Home</router-link>
+            <router-link to="/projects" class="text-gray-600 hover:text-gray-900 transition-colors">Projects</router-link>
+            <router-link to="/pricing" class="text-gray-600 hover:text-gray-900 transition-colors">Pricing</router-link>
+            <router-link to="/about" class="text-gray-600 hover:text-gray-900 transition-colors">About</router-link>
+            <router-link to="/contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</router-link>
           </nav>
           <div class="text-center md:text-right">
             <p class="text-sm text-gray-600">© 2025 <a href="https://www.teklumin.com/">TekLumin </a>. All rights
