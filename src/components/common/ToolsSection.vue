@@ -57,25 +57,25 @@ interface Tool {
 const tools = ref<Tool[]>([
   
   {
-    id: '2',
+    id: '1',
     name: 'Invoice Maker',
     description: 'Create professional invoices instantly. Perfect for Ghana businesses with mobile money integration.',
     image: '/invoiceteklumin.webp',
-    link: 'https://invoicemaker-eosin.vercel.app/'
+    link: 'https://invoice.stratonea.com/'
   },
   {
     id: '2',
     name: 'Receipt Maker',
     description: 'Generate clean, professional receipts for your customers. Mobile-optimized and printer-friendly.',
     image: '/receiptteklumin.webp',
-    link: 'https://receiptmaker-ten.vercel.app/'
+    link: 'https://receipt.stratonea.com/'
   },
    {
     id: '3',
     name: 'Sales Tracker',
     description: 'Simple sales tracking tool to monitor your business performance and growth over time.',
     image: '/salestrackerteklumin.webp',
-    link: 'https://salestracker-gamma.vercel.app/'
+    link: 'https://sales.stratonea.com/'
   },
   {
     id: '4',
