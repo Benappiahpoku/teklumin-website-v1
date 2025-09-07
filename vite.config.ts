@@ -27,7 +27,7 @@ export default defineConfig({
         name: 'TekLumin Agency',
         short_name: 'TekLumin',
         description: 'A mobile-first application optimized for Ghana\'s connectivity conditions',
-        theme_color: '#1F3A8A',
+        theme_color: '#000',
         icons: [
           {
             src: '/android-chrome-192x192.png',

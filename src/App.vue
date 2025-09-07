@@ -4,7 +4,7 @@
   - Uses reusable AppSuspense component for loading states
   - Renders the active layout and page via <router-view />
   - Displays PWA update notifications
-  - Follows TekLumen guidelines for Ghana: mobile-first, clear feedback, offline-aware
+  - Follows TekLumin guidelines for Ghana: mobile-first, clear feedback, offline-aware
 -->
 
 <template>

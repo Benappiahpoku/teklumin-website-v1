@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Updated brand colors with full scale - TekLumen theme
+        // Updated brand colors with full scale - TekLumin theme
         primary: {
           50: '#F8F9FA', // Very light gray
           100: '#F1F3F4', // Light gray

@@ -74,13 +74,46 @@ interface Project {
 const featuredProjects = ref<Project[]>([
     {
         id: '1',
+        name: 'KHY Business',
+        description: 'Furniture Business website built for trust, simplicity, and clarity. Clean product listings with detailed information and easy contact options.',
+        image: '/khyproject.webp',
+        category: 'Furniture',
+        deliveryTime: '3 days',
+        location: 'Accra, Ghana',
+        features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Free Lifetime hosting'],
+        detailsUrl: 'https://khybusiness.vercel.app/'
+    },
+    {
+        id: '2',
+        name: 'Cenovate',
+        description: 'A professional 5-page business website optimized for mobile users. Showcases comprehensive project portfolio, authentic client testimonials, and delivers an intuitive mobile-first browsing experience.',
+        image: '/cenovateproject.webp',
+        category: 'Project Services',
+        deliveryTime: '5 days',
+        location: 'Kumasi, Ghana',
+        features: ['Mobile-first design', 'Project catalog', 'Client testimonials'],
+        detailsUrl: 'https://cenovate.vercel.app'
+    },
+    {
+        id: '3',
+        name: 'Mugs Boutique',
+        description: 'A clean, mobile-first business website designed to position Mugs Boutique as a trusted consultancy. This one pager features a modern layout, showcasing the SME Tools for African Businesses —crafted for clarity, speed, and professionalism.',
+        image: '/mugsboutiqueproject.webp',
+        category: 'E-commerce',
+        deliveryTime: '3 days',
+        location: 'Accra, Ghana',
+        features: ['Mobile - first design', 'Apps catalog', 'WhatsApp integration'],
+        detailsUrl: 'https://www.mugsboutique.com'
+    },
+    {
+        id: '1',
         name: 'Naachiaa Estates',
         description: 'Real estate website built for trust, simplicity, and clarity. Clean property listings with detailed information and easy contact options.',
         image: '/naachiaaproject.webp',
         category: 'Real Estate',
         deliveryTime: '3 days',
         features: ['Mobile-first design', 'Product catalog', 'WhatsApp integration', 'Free Lifetime hosting'],
-        detailsUrl: 'https://naachiaa.vercel.app/'
+        detailsUrl: 'https://naachiaa.netlify.app/'
     },
     {
         id: '2',
@@ -94,14 +127,14 @@ const featuredProjects = ref<Project[]>([
     },
     {
         id: '3',
-        name: 'Stratonea',
-        description: 'A clean, mobile-first business website designed to position Stratonea as a trusted consultancy. This one pager features a modern layout, showcasing the SME Tools for African Businesses —crafted for clarity, speed, and professionalism.',
-        image: '/stratoneaproject.webp',
+        name: 'Benappiahpoku Portfolio',
+        description: 'A clean, mobile-first business website designed to position Ben Appiah Poku as a trusted consultancy. This blog based website features a modern layout, showcasing the SME Tools for African Businesses —crafted for clarity, speed, and professionalism.',
+        image: '/benappiahpokuproject.webp',
         category: 'Portfolio',
         deliveryTime: '2 days',
         location: 'Accra, Ghana',
         features: ['Mobile - first design', 'Apps catalog', 'WhatsApp integration'],
-        detailsUrl: 'https://www.stratonea.com'
+        detailsUrl: 'https://www.benappiahpoku.com'
     },
 ])
 
