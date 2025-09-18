@@ -96,7 +96,7 @@ const pricingPlans = ref<PricingPlan[]>([
     {
         id: '2',
         name: 'Standard',
-        price: 8000,
+        price: 9000,
         description: 'Most popular choice for businesses',
         features: [
             '5-page website',
@@ -117,7 +117,7 @@ const pricingPlans = ref<PricingPlan[]>([
         price: 13000,
         description: 'For growing businesses with advanced needs',
         features: [
-            '5-page website + blog or custom app',
+            '5-page website + blog',
             'Clean, responsive design',
             'Free lifetime hosting',
             'Mobile optimization',
