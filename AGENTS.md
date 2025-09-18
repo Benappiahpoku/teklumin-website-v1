@@ -19,6 +19,12 @@ npm install
 npm run dev
 ```
 
+**Setup Script Features:**
+
+- Interactive project name configuration
+- Updates both `package.json` and `src/config.ts`
+- Validates input and provides feedback
+
 ### Development Scripts
 
 - `npm run dev` - Start development server with hot reload and TypeScript checking
@@ -29,6 +35,9 @@ npm run dev
 - `npm run dev:slow` - Simulate slow network conditions for testing
 - `npm run lighthouse` - Run Lighthouse performance audit
 - `npm run analyze` - Analyze bundle size and dependencies
+- `npm run size-check` - Check bundle size after build
+- `npm run network-test` - Run network performance tests
+- `npm run generate-icons` - Generate PWA icons for all sizes
 
 ### Key Development Tools
 
@@ -38,8 +47,15 @@ npm run dev
 - **Vite** for fast development and building
 - **Vitest** for unit testing
 - **Vue Router** for client-side routing
-- **Pinia** for state management
-- **PWA** capabilities with service workers
+- **Pinia** for state management with persistence
+- **PWA** capabilities with service workers and offline support
+- **Workbox** for advanced caching strategies
+- **FontAwesome** for icons
+- **Vue Toastification** for notifications
+- **Axios Retry** for network resilience
+- **LocalForage** for offline storage
+- **html2pdf.js** for PDF generation
+- **Zod** for schema validation
 
 ## Testing Instructions
 
@@ -68,6 +84,8 @@ npm run test -- --watch
 - Mock network requests and external dependencies
 - Test error states and loading conditions
 - Ensure tests pass on both desktop and mobile viewports
+- Use Vitest for fast, modern testing
+- Include @testing-library/vue for accessibility testing
 
 ### Performance Testing
 
@@ -80,6 +98,12 @@ npm run lighthouse
 
 # Analyze bundle size
 npm run analyze
+
+# Check bundle size after build
+npm run size-check
+
+# Run network performance tests
+npm run network-test
 ```
 
 ## PR Instructions
@@ -97,9 +121,9 @@ npm run analyze
 [TekLumin] <type>: <description>
 
 Examples:
-[TekLumin] feat: add mobile-first navigation component
-[TekLumin] fix: resolve offline indicator positioning
-[TekLumin] docs: update component usage examples
+feat: add mobile-first navigation component
+fix: resolve offline indicator positioning
+docs: update component usage examples
 ```
 
 ### Pre-commit Checklist
@@ -138,11 +162,15 @@ Examples:
 
 ```bash
 src/components/
-├── base/          # Basic UI components (buttons, inputs, etc.)
-├── common/        # Shared sections (testimonials, pricing, etc.)
+├── analytics/     # Performance monitoring (WebVitalsMonitor.vue)
+├── base/          # Basic UI components (buttons, inputs, forms)
+├── common/        # Shared sections (testimonials, pricing, contact)
 ├── layout/        # Layout components (header, footer, navigation)
 ├── enhanced/      # Advanced components with complex logic
-└── network/       # Network-aware components
+├── network/       # Network-aware components
+├── payment/       # Payment-related components (currently empty)
+├── pwa tools/     # PWA utilities (OptimizedLoading.vue, PWAUpdateNotification.vue)
+└── system/        # System components (ErrorBoundary.vue)
 ```
 
 - Implement proper TypeScript interfaces
@@ -166,6 +194,8 @@ src/components/
 - Minimize bundle size and loading times
 - Include structured data for local business
 - Generate and maintain sitemap.xml and robots.txt
+- Use Workbox for advanced caching strategies
+- Monitor performance with WebVitalsMonitor component
 
 ### Business Logic
 
@@ -175,11 +205,18 @@ src/components/
 - Support Ghanaian businesses and local market
 - Maintain pricing in GHS currency
 - Focus on fast delivery (2-5 day turnaround)
+- PWA tools: OptimizedLoading.vue, PWAUpdateNotification.vue
+- System components: ErrorBoundary.vue for error handling
+- Analytics: WebVitalsMonitor.vue for performance tracking
 
 ### File Organization
 
 - Keep components modular and reusable
 - Use composables for shared logic (`src/composables/`)
+  - `useNetworkStatus.ts` - Network monitoring and connection quality
+  - `useOfflineStorage.ts` - Offline data persistence
+  - `usePWA.ts` - PWA functionality and updates
+  - `useToast.ts` - Toast notifications
 - Store business configuration in `src/config.ts`
 - Maintain consistent naming conventions
 - Document component props and usage
@@ -189,9 +226,9 @@ src/components/
 - Deploy to Netlify for optimal performance
 - Configure proper build settings
 - Set up custom domain handling
-- Enable PWA service worker
-- Configure proper caching strategies
-- Monitor Core Web Vitals
+- Enable PWA service worker with Workbox caching
+- Configure proper caching strategies for Ghana's network conditions
+- Monitor Core Web Vitals with WebVitalsMonitor component
 
 ## Common Issues & Solutions
 
@@ -201,6 +238,8 @@ src/components/
 - Implement proper loading states
 - Use offline storage for critical data
 - Handle network errors gracefully
+- Monitor connection quality with `useNetworkStatus` composable
+- Implement background sync for failed requests
 
 ### Mobile Testing
 
@@ -215,6 +254,8 @@ src/components/
 - Check TypeScript errors with `npm run dev:typecheck`
 - Verify all imports are correct
 - Ensure Tailwind classes are properly configured
+- Check Vite cache issues: delete `node_modules/.vite` if needed
+- Verify PWA manifest and service worker configuration
 
 ## Resources
 
